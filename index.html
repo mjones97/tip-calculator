@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Tip Calculator</h1>
+            <hr>
+            <div class="calculator">
+                <div class="bill-amount">
+                    <h3>Bill amount <span>(required)</span></h3>
+                    <input type="text" id="bill-amount" placeholder="$100">
+                    <p id="error"></p>
+                </div>
+                <div class="service-level">
+                    <h3>Level of service <span>(required)</span></h3>
+                    <div class="dropdown">
+                        <select id="service-options">
+                            <option disabled selected>-- Choose an option --</option>
+                            <option value=".20">Above Average <span>(20%)</span> </option>
+                            <option value=".15">Average <span>(15%)</span> </option>
+                            <option value="0">No tip</option>
+                            <option value="custom" onclick="customTip()">None of these (Enter custom percentage)</option>   
+                        </select>
+                        <div id="custom-tip-input" style="display: none;">
+                            <input type="text" id="custom-percentage" placeholder="Enter custom percentage">
+                        </div>
+                    </div>
+                    <p id="service-error"></p>
+                </div>
+                <div class="customers-num">
+                    <h3>Number of customers tipping <span>(required)</span></h3>
+                    <input type="text" id="people-amount" placeholder="1">
+                    <p id="customer-error"></p>
+                </div>
+                <div class="calculate-btn">
+                    <button id="calculate" onclick="calculate()">Calculate</button>
+                </div>
+                <div class="total-tip">
+                    <h3>Total tip:</h3>
+                    <h2 id="total-tip"></h2>
+                </div>
+                <div class="tip-per">
+                    <h3>Tip per customer:</h3>
+                    <h2 id="tip-per"></h2>
+                </div>
+                <div class="bill-total">
+                    <h3>Total bill, plus tip:</h3>
+                    <h2 id="bill-total"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
